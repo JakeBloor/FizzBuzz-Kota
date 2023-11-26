@@ -17,19 +17,20 @@ internal class FizzBuzzer : IFizzBuzzer
 
     private string GetFizzBuzz(int number)
     {
-        if (IsFizz(number) && IsBuzzz(number))
+        if (IsMultiple3(number) && IsMultiple5(number))
         {
             return "FizzBuzz";
         }
-        else if (IsFizz(number))
+        else if (IsMultiple3(number))
         {
             return "Fizz";
         }
-        else if (IsBuzzz(number))
+        else if (IsMultiple5(number))
         {
             return "Buzz";
         }
-        else if (ContainsThree(number) && ContainsFive(number))
+        
+        if (ContainsThree(number) && ContainsFive(number))
         {
             return "FizzBuzz";
         }
@@ -41,18 +42,16 @@ internal class FizzBuzzer : IFizzBuzzer
         {
             return "Buzz";
         }
-        else
-        {
-            return number.ToString();
-        }
+        
+        return number.ToString();
     }
 
-    private static bool IsFizz(int number)
+    private static bool IsMultiple3(int number)
     {
         return number % 3 == 0;
     }
 
-    private static bool IsBuzzz(int number)
+    private static bool IsMultiple5(int number)
     {
         return number % 5 == 0;
     }
