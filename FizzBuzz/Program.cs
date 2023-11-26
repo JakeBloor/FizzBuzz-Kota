@@ -1,2 +1,14 @@
-﻿// See https://aka.ms/new-console-template for more information
-Console.WriteLine("Welcome to FizzBuzz");
+﻿Console.WriteLine("Welcome to FizzBuzz");
+
+IFizzBuzzer fizzBuzzer = new FizzBuzzer();
+
+var results = fizzBuzzer.FizzBuzz();
+
+Console.WriteLine(
+    string.Join(
+               Environment.NewLine,
+                      results
+                         ));
+
+Console.WriteLine("Press any key to exit");
+Console.ReadLine();
